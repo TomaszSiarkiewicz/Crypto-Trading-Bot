@@ -31,8 +31,6 @@ class OrderCreatorTest {
         step.put(Pair.BNB_USDT, "0.00100000");
         orderCreator.setStepSize(step);
 
-        Map<Coin, BigDecimal> assets = new HashMap<>();
-        assets.put(Coin.BNB, BigDecimal.valueOf(30000));
         when(walletFacade.getAssets(Coin.USDT)).thenReturn(BigDecimal.valueOf(30000));
         when(strategyCarrier.shouldTrade()).thenReturn(TradeAction.ENTER);
         when(strategyCarrier.getPair()).thenReturn(Pair.BNB_USDT);
